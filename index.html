@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Hangman</title>
     <link rel="stylesheet" type="text/css" href="style.css" />
-    <script defer src="./hangman.js"></script>
+    <script defer type="text/javascript" src="hangman.js"></script>
+    <script defer type="text/javascript" src="script.js"></script>
   </head>
   <body>
     <h1>Simple 'Hangman' Game</h1>
@@ -23,7 +24,12 @@
       <p>The chosen word was: <span></span></p>
     </div>
 
-    <input type="text" placeholder="Guess a letter" maxlength="1" />
+    <input
+      type="text"
+      class="inputField"
+      placeholder="Guess a letter"
+      maxlength="1"
+    />
     <button class="guess">Guess</button>
     <button class="restart">Restart</button>
     <h2>Current word:</h2>

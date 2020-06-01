@@ -3,8 +3,6 @@ let numberOfGuesses = 0;
 
 const incorrectGuess = () => {
   numberOfGuesses++;
-  numberOfGuesses++;
-  numberOfGuesses++;
   return numberOfGuesses;
 };
 
