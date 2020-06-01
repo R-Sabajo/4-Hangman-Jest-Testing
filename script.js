@@ -2,22 +2,20 @@
 // allTheWords = []
 // This code here selects a random word
 const wordList = [
-
-  "vis",
-  "toeter",
-  "developer",
-  "telefoon",
-  "moeder",
-  "snoer",
-  "geeuw",
-  "patatje",];
+  'vis',
+  'toeter',
+  'developer',
+  'telefoon',
+  'moeder',
+  'snoer',
+  'geeuw',
+  'patatje',
+];
 let maxAmount = 5;
 
 let word;
 const wordpicker = function (list) {
-
   let word = 'sinaasappel';
-
 
   let index = Math.floor(Math.random() * list.length);
   const x = list;
@@ -39,16 +37,12 @@ const wordGuessed = function (word, inputs) {
 };
 
 const clean = function () {
-
-  document.querySelector("input").value = "";
-
+  document.querySelector('input').value = '';
 };
 
 let gameOver;
 const winTheGame = function () {
-
-  document.querySelector(".win").style.display = "block";
-
+  document.querySelector('.win').style.display = 'block';
   gameOver = true;
 };
 
@@ -59,13 +53,12 @@ const lose4 = function () {
 };
 
 const spanTheWord1 = function (word) {
-
-  document.querySelector(".lose p span").innerHTML = `"${word.join("")}"`;
+  document.querySelector('.lose p span').innerHTML = `"${word.join('')}"`;
 };
 
 let tries = 0;
 const updateTriesDisplay = function (tries) {
-  document.querySelector(".lives span").innerHTML = 5 - tries;
+  document.querySelector('.lives span').innerHTML = 5 - tries;
 };
 
 const letters = function (word, inputs) {
@@ -139,8 +132,8 @@ function beginTheGameWithPlayer(player1) {
   letters(word, inputs);
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-  document.querySelector(".guess").addEventListener("click", guessLetter);
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelector('.guess').addEventListener('click', guessLetter);
 
   document
     .querySelector('.restart')
