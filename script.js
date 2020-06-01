@@ -9,15 +9,12 @@ const wordList = [
   "moeder",
   "snoer",
   "geeuw",
-  "patatje",
 ];
-
 let maxAmount = 5;
 
 let word;
 const wordpicker = function (list) {
   let word = "sinaasappel";
-
   let index = Math.floor(Math.random() * list.length);
   const x = list;
   console.log("wat ben ik?", word);
@@ -25,7 +22,6 @@ const wordpicker = function (list) {
 };
 
 let inputs;
-
 const wordGuessed = function (word, inputs) {
   // remove all letters from word that are already guessed
   // We can do this with a for loop to.
@@ -44,7 +40,6 @@ const clean = function () {
 let gameOver;
 const winTheGame = function () {
   document.querySelector(".win").style.display = "block";
-
   gameOver = true;
 };
 
@@ -56,14 +51,11 @@ const lose4 = function () {
 
 const spanTheWord1 = function (word) {
   document.querySelector(".lose p span").innerHTML = `"${word.join("")}"`;
-=======
-  document.querySelector('.lose p span').innerHTML = `"${word.join('')}"`;
->>>>>>> 9037a735f89b257c78693d66f2d3fb9fda972aba
 };
 
 let tries = 0;
 const updateTriesDisplay = function (tries) {
-  document.querySelector('.lives span').innerHTML = 5 - tries;
+  document.querySelector(".lives span").innerHTML = 5 - tries;
 };
 
 const letters = function (word, inputs) {
@@ -90,12 +82,11 @@ const guessLetter = function () {
     return;
   }
   const input1 = document.querySelector("input").value;
-  console.log(input1);
   document.querySelector("input").value = "";
 
-  // if (inputs.includes(input1) || input1 === '') {
-  //   return;
-  // }
+  if (inputs.includes(input1) || input1 === "") {
+    return;
+  }
 
   if (!word.includes(input1)) {
     tries++;
@@ -138,9 +129,8 @@ function beginTheGameWithPlayer(player1) {
   letters(word, inputs);
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-  document.querySelector('.guess').addEventListener('click', guessLetter);
-
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelector(".guess").addEventListener("click", guessLetter);
   document
     .querySelector(".restart")
     .addEventListener("click", beginTheGameWithPlayer);
