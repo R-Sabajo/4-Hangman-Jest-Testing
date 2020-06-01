@@ -2,6 +2,7 @@
 // allTheWords = []
 // This code here selects a random word
 const wordList = [
+<<<<<<< HEAD
   "vis",
   "toeter",
   "developer",
@@ -12,11 +13,26 @@ const wordList = [
   "patatje",
 ];
 
+=======
+  'vis',
+  'toeter',
+  'developer',
+  'telefoon',
+  'moeder',
+  'snoer',
+  'geeuw',
+  'patatje',
+];
+>>>>>>> 9037a735f89b257c78693d66f2d3fb9fda972aba
 let maxAmount = 5;
 
 let word;
 const wordpicker = function (list) {
+<<<<<<< HEAD
   let word = "sinaasappel";
+=======
+  let word = 'sinaasappel';
+>>>>>>> 9037a735f89b257c78693d66f2d3fb9fda972aba
 
   let index = Math.floor(Math.random() * list.length);
   const x = list;
@@ -38,13 +54,21 @@ const wordGuessed = function (word, inputs) {
 };
 
 const clean = function () {
+<<<<<<< HEAD
   document.querySelector("input").value = "";
+=======
+  document.querySelector('input').value = '';
+>>>>>>> 9037a735f89b257c78693d66f2d3fb9fda972aba
 };
 
 let gameOver;
 const winTheGame = function () {
+<<<<<<< HEAD
   document.querySelector(".win").style.display = "block";
 
+=======
+  document.querySelector('.win').style.display = 'block';
+>>>>>>> 9037a735f89b257c78693d66f2d3fb9fda972aba
   gameOver = true;
 };
 
@@ -55,12 +79,16 @@ const lose4 = function () {
 };
 
 const spanTheWord1 = function (word) {
+<<<<<<< HEAD
   document.querySelector(".lose p span").innerHTML = `"${word.join("")}"`;
+=======
+  document.querySelector('.lose p span').innerHTML = `"${word.join('')}"`;
+>>>>>>> 9037a735f89b257c78693d66f2d3fb9fda972aba
 };
 
 let tries = 0;
 const updateTriesDisplay = function (tries) {
-  document.querySelector(".lives span").innerHTML = 5 - tries;
+  document.querySelector('.lives span').innerHTML = 5 - tries;
 };
 
 const letters = function (word, inputs) {
@@ -135,8 +163,8 @@ function beginTheGameWithPlayer(player1) {
   letters(word, inputs);
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-  document.querySelector(".guess").addEventListener("click", guessLetter);
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelector('.guess').addEventListener('click', guessLetter);
 
   document
     .querySelector(".restart")

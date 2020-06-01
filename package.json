@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "name": "galgje",
+=======
+  "name": "WEEK4-Eindopdracht",
+>>>>>>> 9037a735f89b257c78693d66f2d3fb9fda972aba
   "version": "1.0.0",
   "description": "",
   "main": "script.js",
