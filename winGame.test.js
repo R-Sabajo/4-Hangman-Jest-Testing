@@ -1,5 +1,5 @@
 const winGame = require('./winGame.js');
 
 test('Het winnen van de game', () => {
-  expect(winGame()).toBe();
+  expect(winGame(word, letterList)).toBe(true);
 });
