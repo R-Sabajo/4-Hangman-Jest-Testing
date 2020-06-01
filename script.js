@@ -23,6 +23,7 @@ const wordpicker = function (list) {
 };
 
 let inputs;
+
 const wordGuessed = function (word, inputs) {
   // remove all letters from word that are already guessed
   // We can do this with a for loop to.
