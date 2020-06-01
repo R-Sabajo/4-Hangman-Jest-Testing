@@ -1,8 +1,12 @@
 const updateLetterList = () => {
-  const list = ['x', 'y', 'z'];
-  const letter = 'a';
-  list.push(letter);
-  return list;
+  const GuessedLetters = ['x', 'y', 'z'];
+  const NewLetter = 'b';
+  if (!GuessedLetters.includes(NewLetter)) {
+    GuessedLetters.push(NewLetter);
+    return GuessedLetters;
+  } else {
+    return false;
+  }
 };
 
 module.exports = updateLetterList;
