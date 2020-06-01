@@ -1,10 +1,13 @@
 {
-  "name": "galgje",
+  "name": "WEEK4-Eindopdracht",
+=======
+
   "version": "1.0.0",
   "description": "",
   "main": "script.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest --watch-All"
+
   },
   "repository": {
     "type": "git",
