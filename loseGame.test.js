@@ -3,5 +3,5 @@
 const functie = require("./loseGame.js");
 
 test("Should end game after no more tries", () => {
-  expect(functie(7)).toBe(true);
+  expect(functie(5)).toBe(true);
 });

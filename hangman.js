@@ -1,41 +1,47 @@
-let input1 = document.querySelector('input').value;
+// Alle constanten die nodig zijn
 
-let guessLetter = input1;
-console.log(guessLetter);
+const inputValue = document.querySelector(".inputField");
 
-const GuessButton = document.querySelector('.guess');
+var guessLetter = inputValue.value;
 
-const GuessedLettersList = document.querySelector('.guessed_letters');
+const guessButton = document.querySelector(".guess");
 
-const wordList = [
-  'vis',
-  'toeter',
-  'developer',
-  'telefoon',
-  'moeder',
-  'snoer',
-  'geeuw',
-  'patatje',
-  'hamer',
-  'zalf',
+const GuessedLettersList = document.querySelector(".guessed_letters");
+
+const listWords = [
+  "vis",
+  "toeter",
+  "developer",
+  "telefoon",
+  "moeder",
+  "snoer",
+  "geeuw",
+  "patatje",
+  "hamer",
+  "zalf",
 ];
 
-const startGame = () => {
-  let randomWord = wordList[Math.floor(Math.random() * wordList.length)];
+var randomWord = listWords[Math.floor(Math.random() * listWords.length)];
 
-  return randomWord;
+// 1 Start the game
+
+const startGame = () => {
+  // Get random word
+  randomWord;
+  // create empty array
+  let answerArray = [];
+  for (let i = 0; i < randomWord.length; i++) {
+    answerArray[i] = "_";
+  }
+  document.querySelector(".the_word").innerHTML = answerArray.join(" ");
 };
 
-const word = startGame();
+startGame();
 
-let answerArray = [];
-for (let i = 0; i < word.length; i++) {
-  answerArray[i] = '_';
-}
-let remainingLetters = word.length;
+// 2 Playing the game
 
-document.querySelector('.the_word').innerHTML = answerArray.join(' ');
-
+// While word has not been guessed
+//
 const checkLetter = (guessLetter, word) => {
   if (word.includes(guessLetter)) {
     for (let j = 0; j < word.length; j++) {
@@ -61,7 +67,7 @@ const checkLetter = (guessLetter, word) => {
 
 const GuessedLetters = [];
 
-const GuessedLetterList = letter => {
+const GuessedLetterList = (letter) => {
   if (!GuessedLetters.includes(letter)) {
     GuessedLetters.push(letter);
   }
@@ -69,8 +75,10 @@ const GuessedLetterList = letter => {
 
 GuessedLettersList.innerHTML = GuessedLetters;
 
-GuessButton.addEventListener('click', () => {
-  checkLetter(guessLetter, word);
+guessButton.addEventListener("click", () => {
+  const inputText = inputValue.value;
+  console.log(inputText);
+  inputValue.value = "";
 
   // input1.value = '';
 });
