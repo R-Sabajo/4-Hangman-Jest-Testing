@@ -53,11 +53,6 @@ const spanTheWord1 = function (word) {
   document.querySelector('.lose p span').innerHTML = `"${word.join('')}"`;
 };
 
-let tries = 0;
-const updateTriesDisplay = function (tries) {
-  document.querySelector('.lives span').innerHTML = 5 - tries;
-};
-
 const letters = function (word, inputs) {
   let wrongLetters = inputs.filter(function (letter) {
     // If the letter is in the word return.... false/true (we want to remove that then)
@@ -84,9 +79,9 @@ const guessLetter = function () {
   const input1 = document.querySelector('input').value;
   document.querySelector('input').value = '';
 
-  if (inputs.includes(input1) || input1 === '') {
-    return;
-  }
+  // if (inputs.includes(input1) || input1 === '') {
+  //   return;
+  // }
 
   if (!word.includes(input1)) {
     tries++;

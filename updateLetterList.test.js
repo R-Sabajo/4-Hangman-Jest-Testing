@@ -1,6 +1,6 @@
-const updateLetterList = require('./updateLetterList.js');
+const GuessedLetterList = require('./updateLetterList.js');
 
 test('updaten van de lijst met letters die al geraden zijn', () => {
   const letter = 'b';
-  expect(updateLetterList()).toContain(letter);
+  expect(GuessedLetterList()).toContain(letter);
 });

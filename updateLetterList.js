@@ -1,4 +1,4 @@
-const updateLetterList = () => {
+const GuessedLetterList = () => {
   const GuessedLetters = ['x', 'y', 'z'];
   const NewLetter = 'b';
   if (!GuessedLetters.includes(NewLetter)) {
@@ -9,4 +9,4 @@ const updateLetterList = () => {
   }
 };
 
-module.exports = updateLetterList;
+module.exports = GuessedLetterList;
