@@ -18,6 +18,8 @@ let numberOfGuesses = 0;
 
 let maxTries = 5;
 
+let lives = maxTries - numberOfGuesses;
+
 const listWords = [
   "vis",
   "toeter",
@@ -36,13 +38,22 @@ const wordRandomizer = (list) => {
   return list[index];
 };
 
-randomWord = wordRandomizer(listWords);
-console.log(randomWord);
+/* randomWord = wordRandomizer(listWords);
+console.log(randomWord); */
 
 // 1 Start the game
 
 const startGame = () => {
-  randomWord;
+  randomWord = wordRandomizer(listWords);
+  console.log(randomWord);
+  guessedLettersArray = [];
+  answerArray = [];
+  numberOfGuesses = 0;
+  maxTries = 5;
+  document.querySelector(".lives span").innerHTML = lives;
+  guessedLettersList.innerHTML = " ";
+  document.querySelector(".the_word").innerHTML = " ";
+  inputValue.maxLength = 1;
   for (let i = 0; i < randomWord.length; i++) {
     answerArray[i] = "_";
   }
@@ -76,6 +87,7 @@ const checkLetter = (letter, randomWord) => {
 const loseGame = (x) => {
   let incorrectGuess = x;
   if (incorrectGuess === maxTries) {
+    inputValue.maxLength = 0;
     return alert("You lose, press restart to play again");
   }
 };
@@ -115,11 +127,5 @@ guessButton.addEventListener("click", () => {
 });
 
 restartButton.addEventListener("click", () => {
-  randomWord = wordRandomizer(listWords);
-  console.log(randomWord);
-  guessedLettersArray = [];
-  guessedLettersList.innerHTML = " ";
-  document.querySelector(".the_word").innerHTML = " ";
-  inputValue.maxLength = 1;
   startGame();
 });
