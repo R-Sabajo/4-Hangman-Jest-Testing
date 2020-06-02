@@ -1,3 +1,42 @@
+.container {
+  background-color: bisque;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 120px 50px 500px 150px;
+  grid-template-areas:
+    'h h h'
+    'n n n'
+    'm m m'
+    'f f f';
+}
+
+.header {
+  background-color: lightblue;
+  grid-area: h;
+  text-align: center;
+}
+
+.nav {
+  background-color: lightgreen;
+  grid-area: n;
+  text-align: center;
+}
+
+.main {
+  grid-area: m;
+  display: flex;
+  background-color: bisque;
+}
+
+.h2 {
+}
+
+footer {
+  text-align: center;
+  grid-area: f;
+}
+
 .win,
 .lose {
   display: none;

@@ -7,35 +7,34 @@
     <title>Hangman</title>
     <link rel="stylesheet" type="text/css" href="style.css" />
     <script defer type="text/javascript" src="hangman.js"></script>
-    <script defer type="text/javascript" src="script.js"></script>
   </head>
   <body>
-    <h1>Simple 'Hangman' Game</h1>
-    <p>[no people will actually be harmed during this game]</p>
+    <section class="container">
+      <header class="header">
+        <h1>Simple 'Hangman' Game</h1>
+        <p>[no people will actually be harmed during this game]</p>
+      </header>
 
-    <div class="win">
-      <h2>You won!</h2>
-      <img src="win.gif" />
-    </div>
+      <nav class="nav">
+        <input
+          type="text"
+          class="inputField"
+          placeholder="Guess a letter"
+          maxlength="1"
+        />
+        <button class="guess">Guess</button>
+        <button class="restart">Restart</button>
+      </nav>
 
-    <div class="lose">
-      <h2>You lost..</h2>
-      <img src="lose.gif" />
-      <p>The chosen word was: <span></span></p>
-    </div>
-
-    <input
-      type="text"
-      class="inputField"
-      placeholder="Guess a letter"
-      maxlength="1"
-    />
-    <button class="guess">Guess</button>
-    <button class="restart">Restart</button>
-    <h2>Current word:</h2>
-    <div class="the_word">_ _ _ _ _</div>
-    <h3>Incorrectly guessed letters:</h3>
-    <div class="guessed_letters"></div>
-    <p class="lives">You have <span></span> lives remaining</p>
+      <main class="main">
+        <h2>Current word:</h2>
+        <div class="the_word">_ _ _ _ _</div>
+      </main>
+      <footer class="footer">
+        <h3>Incorrectly guessed letters:</h3>
+        <div class="guessed_letters"></div>
+        <p class="lives">You have <span></span> lives remaining</p>
+      </footer>
+    </section>
   </body>
 </html>
