@@ -7,13 +7,16 @@
     <title>Hangman</title>
     <link rel="stylesheet" type="text/css" href="style.css" />
     <script defer type="text/javascript" src="hangman.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Libre+Baskerville:wght@700&family=Lobster&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <section class="container">
       <header class="header">
         <h1>Hang the Man</h1>
         <p>Try to avoid your hanging by showing your spelling knowledge!</p>
-        <img src="cloud.png" />
       </header>
 
       <nav class="nav">
@@ -28,6 +31,9 @@
       </nav>
 
       <main class="main">
+        <h1 class="win">You Win</h1>
+        <h1 class="lose">You Lose</h1>
+
         <h2>Current Word</h2>
         <div class="the_word">_ _ _ _ _</div>
       </main>

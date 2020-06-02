@@ -1,3 +1,9 @@
+:root {
+  --main-font: 'Lobster', cursive;
+  --second-font: 'Libre Baskerville', serif;
+  --third-font: 'Cinzel', serif;
+}
+
 .body {
   padding: 0;
   margin: 0;
@@ -8,28 +14,20 @@
   box-sizing: border-box;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-<<<<<<< HEAD
-<<<<<<< HEAD
-  grid-template-rows: 120px 50px 350px 200px;
-=======
-  grid-template-rows: 120px 50px 500px 150px;
-  grid-column-gap: 5px;
->>>>>>> f33f018d22c4356292f053f96033858ad31b0afd
-=======
   grid-template-rows: 120px 50px 350px 200px;
   grid-column-gap: 5px;
->>>>>>> 96ffd46a1a921bf5e21df26b861c9606c83ab9d4
   grid-template-areas:
-    "h h h"
-    "n n n"
-    "m m m"
-    "f f f";
+    'h h h'
+    'n n n'
+    'm m m'
+    'f f f';
 }
 
 .header {
   grid-area: h;
   border: solid 2px;
   border-color: darkblue;
+
   text-align: center;
   background: linear-gradient(
     to right,
@@ -37,6 +35,19 @@
     rgba(117, 189, 209, 1) 31%,
     rgba(73, 165, 191, 1) 100%
   );
+}
+
+.header h1 {
+  font-size: 2.5em;
+  line-height: 0.3em;
+  font-family: var(--main-font);
+  color: red;
+}
+
+.header p {
+  font-size: 1em;
+  font-family: var(--second-font);
+  color: red;
 }
 
 .header img {
@@ -70,9 +81,10 @@
   display: inline-block;
   color: black;
   padding: 8px;
-  font-family: Georgia;
+  font-family: var(--second-font);
 }
 .nav .button {
+  margin-left: 20px;
   box-shadow: 0px 1px 0px 0px #1c1b18;
   background: linear-gradient(to bottom, #eae0c2 5%, #ccc2a6 100%);
   background-color: bisque;
@@ -81,7 +93,7 @@
   display: inline-block;
   cursor: pointer;
   color: black;
-  font-family: Georgia;
+  font-family: var(--second-font);
   font-size: 14px;
   font-weight: bold;
   padding: 4px 12px;
@@ -91,48 +103,47 @@
 .nav .button:hover {
   background: linear-gradient(to bottom, #ccc2a6 5%, #eae0c2 100%);
   background-color: #ccc2a6;
+  color: red;
 }
 
 .main {
   grid-area: m;
   background-color: bisque;
+  background-image: url('./rope.jpg');
+  background-position: right;
+  background-repeat: no-repeat, repeat;
+  background-color: black;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: flex-end;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  font-family: var(--third-font);
 }
 
 .main h2 {
   padding: 0;
   margin: 0;
   grid-area: m;
-  background-color: bisque;
+  color: white;
   margin-bottom: 30px;
-  width: 200px;
+  width: auto;
   letter-spacing: 0.1em;
+  font-family: var(--third-font);
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
->>>>>>> 96ffd46a1a921bf5e21df26b861c9606c83ab9d4
 .the_word {
   font-size: 2em;
-  width: 300px;
+  width: auto;
   margin-bottom: 30px;
   letter-spacing: 0.1em;
+  color: white;
 }
 
-<<<<<<< HEAD
-=======
->>>>>>> f33f018d22c4356292f053f96033858ad31b0afd
-=======
->>>>>>> 96ffd46a1a921bf5e21df26b861c9606c83ab9d4
 footer {
   text-align: center;
   grid-area: f;
   font-size: 1.1em;
+  font-family: var(--third-font);
 }
 
 .guessed_letters {
@@ -143,7 +154,7 @@ footer {
 }
 
 .lives {
-  font-size: 1.5em;
+  font-size: 1.2em;
   line-height: 2.5em;
 }
 
@@ -152,10 +163,40 @@ footer {
   display: none;
 }
 
-.win h2 {
+.win {
   color: red;
+  text-shadow: 2px 2px 5px white;
+  font-family: var(--main-font);
+  align-self: center;
+  font-size: 6em;
+  animation-name: scrolltext;
+  animation-duration: 3000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0.34, 1.12, 0.69, -0.15);
+}
+
+@keyframes scrolltext {
+  from {
+    transform: translateX(-750px);
+  }
+
+  to {
+    transform: translateX(750px);
+  }
+}
+
+.lose {
+  color: black;
+  font-family: var(--main-font);
+  text-shadow: 0px 0px 7px white;
+  align-self: center;
+  font-size: 5em;
+  animation-name: scrolltext;
+  animation-duration: 3000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0.34, 1.12, 0.69, -0.15);
 }
 
 .lose h2 {
-  color: blue;
+  font-family: var(--main-font);
 }
