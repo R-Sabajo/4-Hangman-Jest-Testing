@@ -1,29 +1,33 @@
 // Alle constanten die nodig zijn
 
-const inputValue = document.querySelector(".inputField");
+const inputValue = document.querySelector('.inputField');
+
+const guessButton = document.querySelector('.guess');
+
+const restartButton = document.querySelector('.restart');
+
+const guessedLettersList = document.querySelector('.guessed_letters');
 
 let guessLetter = inputValue.value;
 
-const guessButton = document.querySelector(".guess");
-
-const restartButton = document.querySelector(".restart");
-
-const guessedLettersList = document.querySelector(".guessed_letters");
-
 const listWords = [
-  "vis",
-  "toeter",
-  "developer",
-  "telefoon",
-  "moeder",
-  "snoer",
-  "geeuw",
-  "patatje",
-  "hamer",
-  "zalf",
+  'vis',
+  'toeter',
+  'developer',
+  'telefoon',
+  'moeder',
+  'snoer',
+  'geeuw',
+  'patatje',
+  'hamer',
+  'zalf',
+  'playstation',
+  'quokka',
+  'javascript',
+  'json',
 ];
 
-const wordRandomizer = (list) => {
+const wordRandomizer = list => {
   let index = [Math.floor(Math.random() * list.length)];
   return list[index];
 };
@@ -37,14 +41,16 @@ const startGame = () => {
   answerArray = [];
   numberOfGuesses = 0;
   maxTries = 5;
-  document.querySelector(".lives span").innerHTML = maxTries - numberOfGuesses;
-  guessedLettersList.innerHTML = " ";
-  document.querySelector(".the_word").innerHTML = " ";
+  document.querySelector('.win').style.display = 'none';
+  document.querySelector('.lose').style.display = 'none';
+  document.querySelector('.lives span').innerHTML = maxTries - numberOfGuesses;
+  guessedLettersList.innerHTML = ' ';
+  document.querySelector('.the_word').innerHTML = ' ';
   inputValue.maxLength = 1;
   for (let i = 0; i < randomWord.length; i++) {
-    answerArray[i] = "_";
+    answerArray[i] = '_';
   }
-  document.querySelector(".the_word").innerHTML = answerArray.join(" ");
+  document.querySelector('.the_word').innerHTML = answerArray.join(' ');
 };
 
 startGame();
@@ -56,61 +62,50 @@ const checkLetter = (letter, randomWord) => {
     for (let j = 0; j < randomWord.length; j++) {
       if (randomWord[j] === letter) {
         answerArray[j] = letter;
-        document.querySelector(".the_word").innerHTML = answerArray.join(" ");
+        document.querySelector('.the_word').innerHTML = answerArray.join(' ');
         winGame(answerArray, letter);
       }
     }
   } else {
     guessedLetterList(letter);
     numberOfGuesses++;
-    document.querySelector(".lives span").innerHTML =
+    document.querySelector('.lives span').innerHTML =
       maxTries - numberOfGuesses;
     loseGame(numberOfGuesses);
   }
 };
 
-const loseGame = (x) => {
+const loseGame = x => {
   let incorrectGuess = x;
   if (incorrectGuess === maxTries) {
     inputValue.maxLength = 0;
-    return alert("You lose, press restart to play again");
+    document.querySelector('.lose').style.display = 'block';
   }
 };
 
-const winGame = (word, letter) => {
+const winGame = () => {
   if (
-    answerArray.every((letter) => randomWord.includes(letter)) &&
+    answerArray.every(letter => randomWord.includes(letter)) &&
     randomWord.length == answerArray.length
   ) {
     inputValue.maxLength = 0;
-    alert("You survived! Press restart to play again");
+    document.querySelector('.win').style.display = 'block';
   }
 };
 
-const theWordToGuess = function (letter) {
-  let display = word.map(function (letter) {
-    if (randomWord.includes(letter)) {
-      return letter;
-    } else {
-      return "_";
-    }
-  });
-  document.querySelector(".the_word").innerHTML = display.join(" ");
-};
-
-let guessedLetterList = (letter) => {
+let guessedLetterList = letter => {
   if (!guessedLettersArray.includes(letter)) {
     guessedLettersArray.push(letter);
-    guessedLettersList.innerHTML = guessedLettersArray.join(" ");
+    guessedLettersList.innerHTML = guessedLettersArray.join(' ');
   }
 };
 
-guessButton.addEventListener("click", () => {
+guessButton.addEventListener('click', () => {
   const inputText = inputValue.value;
   checkLetter(inputText, randomWord);
-  inputValue.value = "";
+  inputValue.value = '';
 });
 
-restartButton.addEventListener("click", () => {
+restartButton.addEventListener('click', () => {
   startGame();
 });
