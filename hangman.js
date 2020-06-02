@@ -6,7 +6,11 @@ let guessLetter = inputValue.value;
 
 const guessButton = document.querySelector(".guess");
 
+const restartButton = document.querySelector(".restart");
+
 const guessedLettersList = document.querySelector(".guessed_letters");
+
+let guessedLettersArray = [];
 
 let answerArray = [];
 
@@ -27,15 +31,18 @@ const listWords = [
   "zalf",
 ];
 
-let randomWord = listWords[Math.floor(Math.random() * listWords.length)];
+const wordRandomizer = (list) => {
+  let index = [Math.floor(Math.random() * list.length)];
+  return list[index];
+};
+
+randomWord = wordRandomizer(listWords);
 console.log(randomWord);
 
 // 1 Start the game
 
 const startGame = () => {
-  // Get random word
   randomWord;
-  // create correct empty array
   for (let i = 0; i < randomWord.length; i++) {
     answerArray[i] = "_";
   }
@@ -52,17 +59,14 @@ const checkLetter = (letter, randomWord) => {
   if (randomWord.includes(letter)) {
     for (let j = 0; j < randomWord.length; j++) {
       if (randomWord[j] === letter) {
-        // console.log(randomWord[j]);
         answerArray[j] = letter;
         document.querySelector(".the_word").innerHTML = answerArray.join(" ");
-        // console.log(answerArray);
         winGame(answerArray, letter);
       }
     }
   } else {
     guessedLetterList(letter);
     numberOfGuesses++;
-
     document.querySelector(".lives span").innerHTML =
       maxTries - numberOfGuesses;
     loseGame(numberOfGuesses);
@@ -72,7 +76,7 @@ const checkLetter = (letter, randomWord) => {
 const loseGame = (x) => {
   let incorrectGuess = x;
   if (incorrectGuess === maxTries) {
-    return alert("You lose");
+    return alert("You lose, press restart to play again");
   }
 };
 
@@ -81,7 +85,8 @@ const winGame = (word, letter) => {
     answerArray.every((letter) => randomWord.includes(letter)) &&
     randomWord.length == answerArray.length
   ) {
-    alert("you win!");
+    inputValue.maxLength = 0;
+    alert("you win! Game over, press restart to play again");
   }
 };
 
@@ -96,18 +101,25 @@ const theWordToGuess = function (letter) {
   document.querySelector(".the_word").innerHTML = display.join(" ");
 };
 
-const guessedLetters = [];
-
-const guessedLetterList = (letter) => {
-  if (!guessedLetters.includes(letter)) {
-    guessedLetters.push(letter);
-    guessedLettersList.innerHTML = guessedLetters.join(" ");
+let guessedLetterList = (letter) => {
+  if (!guessedLettersArray.includes(letter)) {
+    guessedLettersArray.push(letter);
+    guessedLettersList.innerHTML = guessedLettersArray.join(" ");
   }
 };
 
 guessButton.addEventListener("click", () => {
   const inputText = inputValue.value;
-  console.log(inputText);
   checkLetter(inputText, randomWord);
   inputValue.value = "";
+});
+
+restartButton.addEventListener("click", () => {
+  randomWord = wordRandomizer(listWords);
+  console.log(randomWord);
+  guessedLettersArray = [];
+  guessedLettersList.innerHTML = " ";
+  document.querySelector(".the_word").innerHTML = " ";
+  inputValue.maxLength = 1;
+  startGame();
 });
