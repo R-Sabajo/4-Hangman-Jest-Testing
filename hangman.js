@@ -86,7 +86,7 @@ const winGame = (word, letter) => {
     alert("You survived! Press restart to play again");
   }
 };
-
+/* 
 const theWordToGuess = function (letter) {
   let display = word.map(function (letter) {
     if (randomWord.includes(letter)) {
@@ -96,7 +96,7 @@ const theWordToGuess = function (letter) {
     }
   });
   document.querySelector(".the_word").innerHTML = display.join(" ");
-};
+}; */
 
 let guessedLetterList = (letter) => {
   if (!guessedLettersArray.includes(letter)) {
