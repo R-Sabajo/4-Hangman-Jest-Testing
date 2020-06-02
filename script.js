@@ -78,7 +78,7 @@ const theWord = function (word, inputLetterWords) {
   document.querySelector(".the_word").innerHTML = display.join(" ");
 };
 
-const guessLetter = function () {
+const guessedLetter = function () {
   if (gameOver) {
     return;
   }
@@ -129,11 +129,12 @@ function beginTheGameWithPlayer(player1) {
   theWord(word, inputs);
   letters(word, inputs);
 }
-
+/* 
 document.addEventListener("DOMContentLoaded", function () {
-  document.querySelector(".guess").addEventListener("click", guessLetter);
+  document.querySelector(".guess").addEventListener("click", guessedLetter);
   document
     .querySelector(".restart")
     .addEventListener("click", beginTheGameWithPlayer);
   beginTheGameWithPlayer();
 });
+ */
