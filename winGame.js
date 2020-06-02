@@ -1,10 +1,10 @@
 const winGame = () => {
-  const correctLetters = ['h', 'o', 'n', 'd'];
-  const word = 'hond';
+  const answerArray = ["h", "o", "n", "d"];
+  const randomWord = "hond";
 
   if (
-    correctLetters.every(letter => word.includes(letter)) &&
-    word.length == correctLetters.length
+    answerArray.every((letter) => randomWord.includes(letter)) &&
+    randomWord.length == answerArray.length
   ) {
     return true;
   } else {

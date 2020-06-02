@@ -10,7 +10,7 @@ const restartButton = document.querySelector(".restart");
 
 const guessedLettersList = document.querySelector(".guessed_letters");
 
-let guessedLettersArray = [];
+/* let guessedLettersArray = [];
 
 let answerArray = [];
 
@@ -18,7 +18,7 @@ let numberOfGuesses = 0;
 
 let maxTries = 5;
 
-let lives = maxTries - numberOfGuesses;
+let lives = maxTries - numberOfGuesses; */
 
 const listWords = [
   "vis",
@@ -50,7 +50,7 @@ const startGame = () => {
   answerArray = [];
   numberOfGuesses = 0;
   maxTries = 5;
-  document.querySelector(".lives span").innerHTML = lives;
+  document.querySelector(".lives span").innerHTML = maxTries - numberOfGuesses;
   guessedLettersList.innerHTML = " ";
   document.querySelector(".the_word").innerHTML = " ";
   inputValue.maxLength = 1;
@@ -98,6 +98,7 @@ const winGame = (word, letter) => {
     randomWord.length == answerArray.length
   ) {
     inputValue.maxLength = 0;
+    document.querySelector(".win").style.display = "block";
     alert("you win! Game over, press restart to play again");
   }
 };
