@@ -9,11 +9,16 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 <<<<<<< HEAD
+<<<<<<< HEAD
   grid-template-rows: 120px 50px 350px 200px;
 =======
   grid-template-rows: 120px 50px 500px 150px;
   grid-column-gap: 5px;
 >>>>>>> f33f018d22c4356292f053f96033858ad31b0afd
+=======
+  grid-template-rows: 120px 50px 350px 200px;
+  grid-column-gap: 5px;
+>>>>>>> 96ffd46a1a921bf5e21df26b861c9606c83ab9d4
   grid-template-areas:
     "h h h"
     "n n n"
@@ -108,6 +113,10 @@
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> 96ffd46a1a921bf5e21df26b861c9606c83ab9d4
 .the_word {
   font-size: 2em;
   width: 300px;
@@ -115,8 +124,11 @@
   letter-spacing: 0.1em;
 }
 
+<<<<<<< HEAD
 =======
 >>>>>>> f33f018d22c4356292f053f96033858ad31b0afd
+=======
+>>>>>>> 96ffd46a1a921bf5e21df26b861c9606c83ab9d4
 footer {
   text-align: center;
   grid-area: f;
