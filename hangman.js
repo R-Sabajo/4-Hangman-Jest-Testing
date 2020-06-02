@@ -10,16 +10,6 @@ const restartButton = document.querySelector(".restart");
 
 const guessedLettersList = document.querySelector(".guessed_letters");
 
-/* let guessedLettersArray = [];
-
-let answerArray = [];
-
-let numberOfGuesses = 0;
-
-let maxTries = 5;
-
-let lives = maxTries - numberOfGuesses; */
-
 const listWords = [
   "vis",
   "toeter",
@@ -37,9 +27,6 @@ const wordRandomizer = (list) => {
   let index = [Math.floor(Math.random() * list.length)];
   return list[index];
 };
-
-/* randomWord = wordRandomizer(listWords);
-console.log(randomWord); */
 
 // 1 Start the game
 
@@ -64,8 +51,6 @@ startGame();
 
 // 2 Playing the game
 
-// While word has not been guessed
-//
 const checkLetter = (letter, randomWord) => {
   if (randomWord.includes(letter)) {
     for (let j = 0; j < randomWord.length; j++) {
@@ -98,8 +83,7 @@ const winGame = (word, letter) => {
     randomWord.length == answerArray.length
   ) {
     inputValue.maxLength = 0;
-    document.querySelector(".win").style.display = "block";
-    alert("you win! Game over, press restart to play again");
+    alert("You survived! Press restart to play again");
   }
 };
 

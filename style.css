@@ -1,3 +1,95 @@
+.container {
+  background-color: bisque;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 120px 50px 500px 150px;
+  grid-column-gap: 5px;
+  grid-template-areas:
+    "h h h"
+    "n n n"
+    "m m m"
+    "f f f";
+}
+
+.header {
+  grid-area: h;
+  border: solid 2px;
+  border-color: darkblue;
+  text-align: center;
+  background: linear-gradient(
+    to right,
+    rgba(147, 206, 222, 1) 0%,
+    rgba(117, 189, 209, 1) 31%,
+    rgba(73, 165, 191, 1) 100%
+  );
+}
+
+.header img {
+  height: 100px;
+  width: 100px;
+  background-color: transparent;
+}
+
+.nav {
+  grid-area: n;
+  display: flex;
+  justify-content: center;
+  border-bottom: solid;
+  border-color: lightblue;
+  padding: 10px;
+  background: linear-gradient(
+    to right,
+    rgba(231, 214, 101, 1) 0%,
+    rgba(227, 173, 65, 1) 48%,
+    rgba(224, 137, 32, 1) 91%
+  );
+  text-align: center;
+}
+
+.nav .inputField {
+  border-radius: 15px;
+  box-shadow: 0px 1px 0px 0px #1c1b18;
+  background-color: #fff;
+  border-radius: 15px;
+  border: 2px solid #333029;
+  display: inline-block;
+  color: black;
+  padding: 8px;
+  font-family: Georgia;
+}
+.nav .button {
+  box-shadow: 0px 1px 0px 0px #1c1b18;
+  background: linear-gradient(to bottom, #eae0c2 5%, #ccc2a6 100%);
+  background-color: bisque;
+  border-radius: 15px;
+  border: 2px solid #333029;
+  display: inline-block;
+  cursor: pointer;
+  color: black;
+  font-family: Georgia;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 4px 12px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #ffffff;
+}
+.nav .button:hover {
+  background: linear-gradient(to bottom, #ccc2a6 5%, #eae0c2 100%);
+  background-color: #ccc2a6;
+}
+
+.main {
+  grid-area: m;
+  display: flex;
+  background-color: bisque;
+}
+
+footer {
+  text-align: center;
+  grid-area: f;
+}
+
 .win,
 .lose {
   display: none;
