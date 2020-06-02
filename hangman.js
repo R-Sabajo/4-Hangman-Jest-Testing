@@ -2,13 +2,17 @@
 
 const inputValue = document.querySelector(".inputField");
 
-var guessLetter = inputValue.value;
+let guessLetter = inputValue.value;
 
 const guessButton = document.querySelector(".guess");
 
 const guessedLettersList = document.querySelector(".guessed_letters");
 
-var answerArray = [];
+let answerArray = [];
+
+let numberOfGuesses = 0;
+
+let maxTries = 5;
 
 const listWords = [
   "vis",
@@ -23,7 +27,7 @@ const listWords = [
   "zalf",
 ];
 
-var randomWord = listWords[Math.floor(Math.random() * listWords.length)];
+let randomWord = listWords[Math.floor(Math.random() * listWords.length)];
 console.log(randomWord);
 
 // 1 Start the game
@@ -48,14 +52,36 @@ const checkLetter = (letter, randomWord) => {
   if (randomWord.includes(letter)) {
     for (let j = 0; j < randomWord.length; j++) {
       if (randomWord[j] === letter) {
-        console.log(randomWord[j]);
+        // console.log(randomWord[j]);
         answerArray[j] = letter;
         document.querySelector(".the_word").innerHTML = answerArray.join(" ");
-        console.log(answerArray);
+        // console.log(answerArray);
+        winGame(answerArray, letter);
       }
     }
   } else {
     guessedLetterList(letter);
+    numberOfGuesses++;
+
+    document.querySelector(".lives span").innerHTML =
+      maxTries - numberOfGuesses;
+    loseGame(numberOfGuesses);
+  }
+};
+
+const loseGame = (x) => {
+  let incorrectGuess = x;
+  if (incorrectGuess === maxTries) {
+    return alert("You lose");
+  }
+};
+
+const winGame = (word, letter) => {
+  if (
+    answerArray.every((letter) => randomWord.includes(letter)) &&
+    randomWord.length == answerArray.length
+  ) {
+    alert("you win!");
   }
 };
 
