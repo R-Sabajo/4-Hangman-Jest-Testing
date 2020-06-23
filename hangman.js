@@ -13,7 +13,6 @@ let guessLetter = inputValue.value;
 const listWords = [
   'vis',
   'toeter',
-  'developer',
   'telefoon',
   'moeder',
   'snoer',
@@ -21,10 +20,11 @@ const listWords = [
   'patatje',
   'hamer',
   'zalf',
-  'playstation',
   'quokka',
   'javascript',
-  'json',
+  'Gollum',
+  'Orc',
+  'Dwarf',
 ];
 
 const wordRandomizer = list => {
