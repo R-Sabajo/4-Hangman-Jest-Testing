@@ -22,9 +22,17 @@ const listWords = [
   'zalf',
   'quokka',
   'javascript',
-  'Gollum',
-  'Orc',
-  'Dwarf',
+  'gollum',
+  'orc',
+  'dwarf',
+  'hobbit',
+  'evi',
+  'milano',
+  'jemayro',
+  'jitske',
+  'tablet',
+  'laptop',
+  'computer',
 ];
 
 const wordRandomizer = list => {
@@ -99,6 +107,14 @@ let guessedLetterList = letter => {
     guessedLettersList.innerHTML = guessedLettersArray.join(' ');
   }
 };
+
+inputValue.addEventListener('keydown', event => {
+  if (event.keyCode === 13) {
+    const inputText = inputValue.value;
+    checkLetter(inputText, randomWord);
+    inputValue.value = '';
+  }
+});
 
 guessButton.addEventListener('click', () => {
   const inputText = inputValue.value;

@@ -10,11 +10,12 @@
 }
 
 .container {
+  box-sizing: border-box;
   background-color: bisque;
   box-sizing: border-box;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 120px 50px 350px 200px;
+  grid-template-rows: 120px 60px 350px 170px;
   grid-column-gap: 5px;
   grid-template-areas:
     'h h h'
@@ -25,9 +26,7 @@
 
 .header {
   grid-area: h;
-  border: solid 2px;
-  border-color: darkblue;
-
+  border: solid 1px black;
   text-align: center;
   background: linear-gradient(
     to right,
@@ -38,16 +37,19 @@
 }
 
 .header h1 {
-  font-size: 2.5em;
-  line-height: 0.3em;
+  font-size: 3em;
+  line-height: 0em;
+  letter-spacing: 0.03em;
   font-family: var(--main-font);
   color: red;
+  text-shadow: 1px 2px 3px grey;
 }
 
 .header p {
   font-size: 1em;
   font-family: var(--second-font);
-  color: red;
+  color: white;
+  text-shadow: 1px 2px 3px grey;
 }
 
 .header img {
@@ -60,36 +62,54 @@
   grid-area: n;
   display: flex;
   justify-content: center;
+  align-items: center;
   border-bottom: solid;
   border-color: lightblue;
   padding: 10px;
-  background: linear-gradient(
-    to right,
-    rgba(231, 214, 101, 1) 0%,
-    rgba(227, 173, 65, 1) 48%,
-    rgba(224, 137, 32, 1) 91%
-  );
+  background: bisque;
   text-align: center;
+}
+.button,
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
 }
 
 .nav .inputField {
   border-radius: 15px;
-  box-shadow: 0px 1px 0px 0px #1c1b18;
+  box-shadow: 1px 1px 3px 0px #1c1b18;
   background-color: #fff;
-  border-radius: 15px;
-  border: 2px solid #333029;
+  border-radius: 20px;
+  border: 1.5px solid #333029;
   display: inline-block;
   color: black;
-  padding: 8px;
+  height: 30px;
+  width: 111px;
+  padding: 0px 10px;
   font-family: var(--second-font);
+  font-size: 1.1em;
+  text-align: center;
 }
+
+::placeholder {
+  color: lightgray;
+  font-size: 0.9em;
+  opacity: 1;
+}
+
+.nav {
+  color: red;
+}
+
 .nav .button {
+  height: 33px;
   margin-left: 20px;
-  box-shadow: 0px 1px 0px 0px #1c1b18;
+  box-shadow: 0px 1px 2px 0px #1c1b18;
   background: linear-gradient(to bottom, #eae0c2 5%, #ccc2a6 100%);
   background-color: bisque;
-  border-radius: 15px;
-  border: 2px solid #333029;
+  border-radius: 20px;
+  border: 1.5px solid #333029;
   display: inline-block;
   cursor: pointer;
   color: black;
@@ -139,13 +159,6 @@
   color: white;
 }
 
-footer {
-  text-align: center;
-  grid-area: f;
-  font-size: 1.1em;
-  font-family: var(--third-font);
-}
-
 .guessed_letters {
   font-weight: 800;
   font-size: 2.5em;
@@ -163,40 +176,58 @@ footer {
   display: none;
 }
 
-.win {
-  color: red;
-  text-shadow: 2px 2px 5px white;
-  font-family: var(--main-font);
-  align-self: center;
-  font-size: 6em;
-  animation-name: scrolltext;
-  animation-duration: 3000ms;
-  animation-iteration-count: infinite;
-  animation-timing-function: cubic-bezier(0.34, 1.12, 0.69, -0.15);
-}
-
-@keyframes scrolltext {
+@keyframes scrollpicture {
   from {
     transform: translateX(-750px);
   }
 
   to {
-    transform: translateX(750px);
+    transform: translateX(0px);
   }
 }
 
-.lose {
-  color: black;
+.win {
+  text-shadow: 2px 2px 5px white;
   font-family: var(--main-font);
-  text-shadow: 0px 0px 7px white;
-  align-self: center;
-  font-size: 5em;
+  position: absolute;
+  top: 125px;
+  font-size: 6em;
   animation-name: scrolltext;
-  animation-duration: 3000ms;
-  animation-iteration-count: infinite;
+  animation-duration: 700ms;
+  animation-iteration-count: 1;
   animation-timing-function: cubic-bezier(0.34, 1.12, 0.69, -0.15);
+}
+
+.lose {
+  color: red;
+  text-shadow: 2px 2px 5px white;
+  font-family: var(--main-font);
+  position: absolute;
+  top: 125px;
+  font-size: 6em;
+  animation-name: scrollpicture;
+  animation-duration: 500ms;
+  animation-iteration-count: 1;
+  animation-timing-function: cubic-bezier(0.34, 1.12, 0.69, -0.15);
+}
+
+.lose img {
+  height: 250px;
+  border-radius: 20px;
+}
+.win img {
+  height: 250px;
+  border-radius: 20px;
 }
 
 .lose h2 {
   font-family: var(--main-font);
+}
+
+footer {
+  text-align: center;
+  grid-area: f;
+  font-size: 1.1em;
+  font-family: var(--third-font);
+  border: solid 1px black;
 }
