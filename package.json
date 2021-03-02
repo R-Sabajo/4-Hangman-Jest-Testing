@@ -19,5 +19,8 @@
   "homepage": "https://github.com/R-Sabajo/WEEK4-Eindopdracht#readme",
   "devDependencies": {
     "jest": "^26.0.1"
+  },
+  "dependencies": {
+    "node-notifier": "^9.0.0"
   }
 }
