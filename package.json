@@ -21,6 +21,7 @@
     "jest": "^26.0.1"
   },
   "dependencies": {
+    "lodash": "^4.17.21",
     "node-notifier": "^9.0.0"
   }
 }
