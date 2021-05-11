@@ -21,7 +21,9 @@
     "jest": "^26.0.1"
   },
   "dependencies": {
+    "hosted-git-info": "^2.8.9",
     "lodash": "^4.17.21",
-    "node-notifier": "^9.0.0"
+    "node-notifier": "^9.0.0",
+    "y18n": "^4.0.3"
   }
 }
